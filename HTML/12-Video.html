@@ -1,0 +1,21 @@
+<!--Opção 1-->
+<video src="./video.mp4" 
+controls 
+controlsList="nodownload" 
+autoplay
+muted
+poster="./capa.jpg">
+</video>
+
+<!--Opção 2-->
+<!--Utilizando a TAG source é possível colocar mais que uma opção de
+extensões de vídeo, e num possível problema com uma das extensões
+a TAG igonora a que apresentou problema ou não foi encontrada e 
+executa a próxima. Isso é utilizado para você de repente ter certeza
+que qualquer dispositivo poderá executar seu video, seja uma ou outra
+extensão-->
+<video width="400">
+    <source src="./teste.mkv">
+    <source src="./teste.mp4">
+    <source src="./teste.avi">
+</video>

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+input {
+    border: 1px solid red;
+    color: blue;
+}
+
+input::placeholder {
+    color: blueviolet;
+}
+
+p {
+    color: blue;
+}
+
+p::first-letter { Altera só a primeira letra
+    color: red;
+}
+
+p::first-line { Altera a primeira linha
+    color: red;
+} */
+
+a{
+    color: blue;
+}
+
+a::before {     /*Antes*/
+    content: "♫";
+}
+
+a::after {      /*Depois*/
+    content: "♫";      /*Conteúdo*/
+}

@@ -1,0 +1,76 @@
+/* 
+    position: static (padrão) - Nõa aceita valores de top, bottom, right e left 
+              fixed - Fixa o elemento na tela
+              sticky - Age como um adesivo, fixa o elemento só onde eu determinar
+              relative - Posição relativa a posição inicial dele
+              absolute - Posição absoluta no elemento ou na página
+                    Se não tiver pai/pai for static --> Posiciona referente a página
+                    Se o pai não for static --> Posiciona referente ao pai
+
+              Propriedades:
+                - top
+                - bottom
+                - left
+                - right
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 200vh;
+    width: 200vh;
+}
+
+.div-dad-static {
+    height: 350px;
+    width: 350px;
+    background: #FF1396;
+    position: static;
+}
+
+.div-son-static {
+    height: 150px;
+    width: 150px;
+    background: #FFFF00;
+}
+
+.div-fixed {
+    height: 100px;
+    width: 100px;
+    background: #ff1b13;
+    position: fixed;
+    left: 400px;
+}
+.div-sticky {
+    height: 100px;
+    width: 100px;
+    background: #ffb413;
+    position: sticky;
+    left: 60px;
+}
+.div-relative {
+    height: 100px;
+    width: 100px;
+    background: #13ffc4;
+    position: relative; 
+    top: 20px;
+    left: 50px;
+}
+
+.div-absolute-pai {
+    height: 100px;
+    width: 100px;
+    background: black;
+    position: absolute; 
+    right: 200px;
+    color: white;
+}
+
+.div-absolute-filho {
+    height: 50px;
+    width: 50px;
+    background: gray;
+    position: absolute; 
+    left: 90px;
+}
