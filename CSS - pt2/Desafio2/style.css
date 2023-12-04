@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Mukta:wght@300;700&family=Oswald&family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    margin: 44px 0 0 76px;
+}
+
+a {
+    color: #989D9C;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+    margin-right: 23px;
+    cursor: pointer;
+}
+
+img {
+    margin: 144px 86px 0 125px;
+    display: inline-block;
+    width: 568px;
+    height: 500px;
+}
+
+div {
+    display: inline-block;
+}
+
+.button-login {
+    width: 130px;
+    height: 41px;
+    background: #665AE1;
+    border-radius: 50px;
+    border: none;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+
+h1 {
+    color: #515151;
+    font-size: 100px;
+    font-weight: 900;
+    line-height: normal;
+}
+
+h2 {
+    color: #515151;
+    font-size: 58px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 32px;
+}
+
+p {
+    color: #848484;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    width: 515px;
+    margin-bottom: 65px;
+}
+
+.button-explore {
+    width: 239px;
+    height: 64px;
+    border-radius: 30px;
+    background: #ADFF00;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12);
+    color: #000;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 890px) {
+    a, p, .button-login {
+        display: none;
+    }
+
+    div {
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        margin: 149px 22px 24px 30px;
+        padding: 0;
+        display: block;
+        width: 354px;
+        height: 317px;
+    }
+
+    section {
+        margin-left: 70px;
+    }
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .button-explore {
+       margin-top: -17px;
+       margin-left: 10px; 
+    }
+}

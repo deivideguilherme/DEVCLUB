@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Mukta:wght@300;700&family=Oswald&family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    margin: 47px 0px 0 42px;
+}
+
+.menu {
+    margin-right: 32px;
+    color: #17233D;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.875px;
+    cursor: pointer;
+}
+
+.learn-more {
+    cursor: pointer;
+    color: #6FBF44;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+button {
+    border-radius: 6px;
+    border: 1px solid #4CB538;
+    background: #6FBF44;
+    width: 124px;
+    height: 51px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+img {
+    margin: 246px 0 0 121px;
+    width: 595.178px;
+    height: 500.005px;
+}
+
+main {
+    display: inline-block;
+    margin: 0px 57px 0px 85px;
+}
+
+h1 {
+    width: 582px;
+    color: #161A49;
+    font-size: 62px;
+    font-weight: 700;
+    line-height: 82px;
+    letter-spacing: 0.596px;
+    margin-bottom: 47px;
+}
+
+p {
+    width: 493px;
+    color: #4B505A;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 0.5px;
+    margin-bottom: 55px;
+}
+
+@media screen and (max-width: 630px) {
+    main {
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    button {
+        width: 91px;
+        height: 31px;
+        font-size: 12px;
+        margin: 17px 15px 0 284px;
+    }
+
+    h1 {
+        width: 280px;
+        font-size: 30px;
+        text-align: center;
+        line-height: 30px;
+        margin: 124px 56px 29px 56px;
+    }
+
+    p {
+        width: 304px;
+        text-align: center;
+        margin: 0 43px 26px 43px;
+    }
+
+    .learn-more {
+        margin: 0 139px 0 138px;
+
+    }
+
+    img {
+        position: absolute;
+        width: 312px;
+        height: 288px;
+        margin: 490px 39px 22px 39px;
+    }
+}

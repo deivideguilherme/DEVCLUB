@@ -1,0 +1,57 @@
+/* Unidade de Medidas:
+    Absolutas: 
+        - px (pixels) 1 centésimo de polegada
+        - in (inches / polegadas)
+        - cm / mm (centimetros / milimetros)
+        # 1 polegada = 2,54cm
+
+    Relativas:
+        - % calcaula o tamanho relativo ao elemento pai
+        - vw (view width) 1vw é 1% da largura da janela do navegador
+        - ch (view height) 1 vh é 1% da altura da janela do navegador
+        - em é uma unidade relativa ao elemento pai
+        - rem é uma unidade relativa ao elemento raiz
+*/
+
+/* Exemplo 1
+    .pai {
+    width: 100px;
+    height: 100px;
+    background: blue;
+}
+
+.filho {
+    width: 50%;
+    height: 50%;
+    background: red;
+} */
+
+/* Exemplo 2
+    .pai {
+    width: 50vw;
+    height: 50vh;
+    background: blue;
+}
+
+.filho {
+    width: 50%;
+    height: 50%;
+    background: red;
+} */
+
+.pai {
+    width: 50vw;
+    height: 50vh;
+    background: blue;
+    color: #ffffff;
+    font-size: 32px;
+}
+
+.filho {
+    width: 50%;
+    height: 50%;
+    background: red;
+    color: #ffffff;
+    font-size: 0.5em;
+    
+}

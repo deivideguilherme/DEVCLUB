@@ -1,0 +1,18 @@
+/* O # são os ID do html */
+#titulo {
+    color: red;
+}
+
+#paragrafo {
+    color: gray;
+    font-weight: bold;
+}
+
+/* As class são representadas por . (ponto) */
+.botao1 {
+    background: green;
+}
+
+.botao2 {
+    background: chocolate;
+}

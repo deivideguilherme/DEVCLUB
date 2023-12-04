@@ -1,0 +1,49 @@
+/* Display
+    - Block
+    - Inline
+    - Inline-Block
+    
+    - Grid
+    - Flex
+    
+        Block:
+            Vem como padrão: div, section, p, h1, h2, ul, li, article..
+            
+            - Ocupa 100% da largura do elemento pai
+            - Sempre ocupa toda sua linha
+            - Altura definida de acordo com o conteúdo
+            - Podemos definir height e width
+            - Podemos definir valores de margin
+
+        Inline:
+            Vem como padrão a, span, b, i..
+
+            - Elementos em linha
+            - Não permite alterar height e width
+            - Não podemos definir valores de margin
+            - Ganha comportamento de uma palavra
+            
+        Inline-Block: 
+            - Elementos em linha, porém com características do display block
+            - Altura e largura podem ser alteradas
+*/
+
+.box {
+    background: #ff1395;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    display: inline;
+}
+
+.box2 {
+    background: #d4ff13;
+    height: 50px;
+    width: 50px;
+}
+
+.box3 {
+    background: #13a9ff;
+    height: 50px;
+    width: 50px;
+}

@@ -1,0 +1,43 @@
+.box {
+    width: 50px;
+    height: 50px;
+    background: blueviolet;
+    
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    margin-right: 25px;
+}
+
+.box2 {
+    width: 50px;
+    height: 50px;
+    background: rgb(226, 162, 43);
+    
+    margin: 20px; /*Expande externamente*/
+    padding: 20px; /*Expande internamente*/
+
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 25px;
+}
+
+.box3 {
+    width: 50px;
+    height: 50px;
+    background: blue;
+    
+    /*Atalho = pode ser utilizado tanto pra padding quanto margin*/
+    margin: 20px 40px 60px 80px;
+          /*12h--15h--18h--21h --> */
+      /*--top--right--bottom--left*/
+
+      /* Se eu trabalhar com 3 valores ao invés de 4, o CSS entente que
+      o primeiro valor é referente ao TOP, o segundo valor para ambos os
+      lados (right e left) e o terceiro valor para BOTTOM */
+
+      /* Se eu trabalhar apenas com 2 valores, o CSS entenderá que o 
+      primeiro valor servirá para TOP e BOTTOM, e o segundo valor
+      RIGHT e LEFT */
+}
