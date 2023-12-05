@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--FORMS
     Captura dados de entrada 
         - input
@@ -34,4 +35,42 @@
     <br>
     <button type="reset">Limpart</button>
     <button type="submit">Enviar</button>
+=======
+<!--FORMS
+    Captura dados de entrada 
+        - input
+    
+    Action: Define para qual url será enciado os dados, vazio envia 
+            para mesma url
+    Method:
+        - GET = toda vez que envio dados através da url
+        - POST = é um envio de dados "escondido"
+-->
+
+<form action="" method="get" enctype="multipart/form-data">
+    <h1>Digite seu endereço: </h1>
+    <label></label>
+    Rua:
+    <input type="text" name="rua" autocomplete="street-address">
+    </label>
+    <br>
+    <label></label>
+    Número:
+    <input type="text" name="numero">
+    </label>
+    <br>
+    <label></label>
+    E-mail:
+    <input type="email" name="email">
+    </label>
+    <br>
+    <!--Toda vez que eu tiver um input do tipo "file"
+    eu preciso inserir dentro do "form" a opção:  
+    enctype="multipart/form-data" para que o formulário
+    saiba que vocÊ enviará um arquivo.-->
+    <input type="file" name="arquivo">
+    <br>
+    <button type="reset">Limpart</button>
+    <button type="submit">Enviar</button>
+>>>>>>> a7b7e391b1b8fdcbdcab61b2b89d06454e4dbdcf
 </form>

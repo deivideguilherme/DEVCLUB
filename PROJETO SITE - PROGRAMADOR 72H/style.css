@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Quando utilizo o asterisco refere-se a tudo que está contido na página*/
 * {
     margin: 0;
@@ -118,4 +119,126 @@ textarea {
     top: 0;
     z-index: 3;
     background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+=======
+/*Quando utilizo o asterisco refere-se a tudo que está contido na página*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+/*Estilizando Body*/
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+/*Estilizando as DIVs*/
+.caixa-principal {
+    width: 40%;
+}
+
+
+/*Estilizando Imagens*/
+.logo-mario-bros {
+    width: 300px;
+}
+
+.mario-luigi {
+    height: 600px;
+}
+
+/*Estilizando a DIV do Vídeo*/
+.caixa-video-background {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+}
+
+/*Estilizando o Vídeo*/
+video {
+    position: fixed;
+    top: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.mascara-video {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+
+}
+
+/*Estilizando Botões*/
+button {
+    height: 40px;
+    width: 200px;
+    background: #C51111;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+/*Estilizando Texto*/
+p {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+/*Estilizando o Fale Conosco*/
+.fale-conosco {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    gap:20px;
+    position: fixed;
+    left: -320px;
+    transition: left 1s linear;
+    z-index: 4;
+}
+
+input {
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    padding-left: 10px;
+    outline-color: chartreuse;
+}
+
+textarea {
+    height: 90px;
+    width: 300px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    padding: 10px;
+    outline-color: chartreuse;
+}
+
+/**/
+.mascara-formulario {
+    visibility: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+>>>>>>> a7b7e391b1b8fdcbdcab61b2b89d06454e4dbdcf
 }
