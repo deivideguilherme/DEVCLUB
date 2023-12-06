@@ -11,6 +11,12 @@
 
 4. Object - Objetos
 
+5. Null e Undefined
+
+6. Array
+
+7. if & Else - Se, Senão
+
 */
 
 //Exemplo com Template Literals
@@ -29,4 +35,18 @@ const number1 = 32
 console.log(number1)
 
 //Exemplo com Object
+const deivide = {
+    name: "Deivide",
+    age: 32,
+    address: {
+        street: "Otone Corrêa",
+        number: 1422,
+        city: "Matão",
+        State: "SP",
+        country: "Brasil"
+    } 
+}
 
+
+
+console.log(deivide.address.street)
