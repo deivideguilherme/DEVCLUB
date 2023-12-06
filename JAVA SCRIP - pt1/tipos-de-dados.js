@@ -44,10 +44,18 @@ const deivide = {
 console.log(deivide.address.street)
 
 //Exemplo de Array - Sempre começaremos a contar da posição zero! 0,1,2..
-const myArray = [10, 20, 'Olá', {name: 'deivide', age:32}]
+const myArray = [
+/*Posição*/
+/*0*/ 10, 
+/*1*/ 20, 
+/*2*/ 'Olá', 
+/*3*/ {name: 'Deivide', age:32}]
+
 console.log(myArray[0])
+
 //alterando o valor de uma posição dentro do array
 myArray[2] = 'Olá Brasil'
+myArray[3].name = 'Carla'
 
 const myArray2 = [
     {
