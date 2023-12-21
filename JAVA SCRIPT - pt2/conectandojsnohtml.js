@@ -2,7 +2,7 @@
 document = HTML: toda vez que eu quiser mencionar o HTML 
                  dentro javascript eu utilizo o document
 
-getElementById -> Trás um elemento pelo ID
+getElementById -> Trás apenas um elemento pelo ID
 getElementByClassName -> Trás todos os elementos com essa classe
 getElementByTagName -> Trás todos os elementos com essa TAG
 getElementByName -> Trás todos os elementos com esse NAME
@@ -44,4 +44,6 @@ console.log(query3)
 const query4 = document.querySelector("button.main-button")
 console.log(query4)
 
-//Exemplo6
+// --> //querySelectorAll - trás todos os elementos com a classe especificada
+const query5 = document.querySelectorAll(".main-button")
+console.log(query5)
