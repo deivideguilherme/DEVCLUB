@@ -9,14 +9,24 @@
 
 <body>
     <h1>JavaScript</h1>
-    <input id="main-input" placeholder="Digite aqui" name="nome-completo">
+
+    <input onkeypress="digiteiNoInput()" id="main-input" placeholder="Digite aqui" name="nome-completo">
+    
     <p class="paragrafh-js">Começando nossa jornada para aprender</p>
     <p class="paragrafh-js">A linguagem mais versátil do mundo</p>
 
-    <img src="../PROJETO SITE - PROGRAMADOR 72H/img/mario-luigi.png" width="150px">
+    <!-- <img src="../PROJETO SITE - PROGRAMADOR 72H/img/mario-luigi.png" width="150px"> -->
 
-    <button class="main-button">Clique aqui</button>
+    <button onclick="cliqueiNoBotao()" class="main-button">Clique aqui</button>
 </body>
+<style>
+    h1 {
+        color: #2102b8;
+    }
+    button {
+        background-color: #9de600;
+    }
+</style>
 
 <!-- 
     Nesse momento do curso, tanto faz eu chamar o 
@@ -24,6 +34,6 @@
     dentro do meu head. Isso interferirá em alguma
     situação específica, dependendo da minha necessidade.
  -->
-<script src="alterandoelementos.js"></script>
+<script src="eventos.js"></script>
 
 </html>
