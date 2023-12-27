@@ -51,7 +51,7 @@ select, input {/*Valores aplicados tanto para o select quanto para o input*/
     margin-bottom: 24px;
     appearance: none; /*Essa propriedade remove a setinha padrão do select*/
     padding-left: 18px;
-    font-weight: 700;class="currency-value"
+    font-weight: 700;
     font-size: 16px;
     color: #555555;
     cursor: pointer;
@@ -73,8 +73,8 @@ button:hover {
     opacity: 0.8;
 }
 
-button:active: {
-    0.6;
+button:active {
+    opacity: 0.6;
 }
 
 section {
@@ -104,7 +104,7 @@ section {
     font-size: 14px;
 }
 
-.currency-value {
+.currency-value, .currency-value-to-convert {
     color: #555555;
     font-weight: 700;
     font-size: 20px;
