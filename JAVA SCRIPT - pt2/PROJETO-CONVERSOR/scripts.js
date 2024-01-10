@@ -12,16 +12,14 @@ function convertValues() {
 
     //pegando o valor que é digitado dentro do input. Buscanso o valor lá dentro do HTML, buscando apenas o valor dentro dele.
     const inputCurrencyValue = document.querySelector(".input-currency").value; //Defini que não quero o input inteiro, mas apenas o valor de dentro dele
-
-    const currencyValueToConvert = document.querySelector(".currency-value-to-convert"); //valor em real
-    
+    const currencyValueToConvert = document.querySelector(".currency-value-to-convert"); //valor em real 
     const currencyValueConverted = document.querySelector(".currency-value"); //outras moedas
 
     //variável do valor fictício do dólar e do euro
     const dolarToday = 5.2;
     const euroToday = 6.2;
     const libraToday = 6.23;
-    const bitcoinToday = 211276.79;
+    const bitcoinToday = 211276.79;   
 
     //condições para a conversão do valor digitado no input. Trocando o valor 0,00 pelo novo valor que foi digitado no input
     if (currencySelectTo.value == "dolar") {
@@ -64,23 +62,38 @@ function convertValues() {
     currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL",
-    }).format(inputCurrencyValue);
+    }).format(currencyValueToConvert);
 }
 
 
 function changeCurrencyFrom(){
-    const currencyNameFrom = document.getElementById("currency-name-from")
+    const currencyNameFrom = document.querySelector(".currency-name-from")
     const currencyImgFrom = document.querySelector(".currency-img-from")
 
     //Condições converter de
-    if (currencySelectFrom.value == "dolar") {
+    if (currencySelectFrom.value == "from-dolar"){
         currencyNameFrom.innerHTML = "Dólar Americano"
         currencyImgFrom.src = "./assets/img/dolar.png"
     }
 
-    if (currencySelectFrom.value == "euro") {
+    if (currencySelectFrom.value == "from-euro"){
         currencyNameFrom.innerHTML = "Euro"
         currencyImgFrom.src = "./assets/img/euro.png"
+    }
+
+    if (currencySelectFrom.value == "from-libra"){
+        currencyNameFrom.innerHTML = "Libra Esterlina"
+        currencyImgFrom.src = "./assets/img/libra.png"
+    }
+
+    if (currencySelectFrom.value == "from-bitcoin"){
+        currencyNameFrom.innerHTML = "Bitcoin"
+        currencyImgFrom.src = "./assets/img/bitcoin.png"
+    }
+
+    if (currencySelectFrom.value == "from-real"){
+        currencyNameFrom.innerHTML = "Real Brasileiro"
+        currencyImgFrom.src = "./assets/img/real.png"
     }
 }
 
@@ -89,27 +102,27 @@ function changeCurrencyTo(){
     const currencyImgTo = document.querySelector(".currency-img-to")
 
     // Condições converter para 
-    if (currencySelectTo.value == "dolar") {
+    if (currencySelectTo.value == "dolar"){
         currencyNameTo.innerHTML = "Dólar Americano"
         currencyImgTo.src = "./assets/img/dolar.png"
     }
     
-    if (currencySelectTo.value == "euro") {
+    if (currencySelectTo.value == "euro"){
         currencyNameTo.innerHTML = "Euro"
         currencyImgTo.src = "./assets/img/euro.png"
     }
 
-    if (currencySelectTo.value == "libra") {
+    if (currencySelectTo.value == "libra"){
         currencyNameTo.innerHTML = "Libra Esterlina"
         currencyImgTo.src = "./assets/img/libra.png"
     }
 
-    if (currencySelectTo.value == "bitcoin") {
+    if (currencySelectTo.value == "bitcoin"){
         currencyNameTo.innerHTML = "Bitcoin"
         currencyImgTo.src = "./assets/img/bitcoin.png"
     }
 
-    if (currencySelectTo.value == "real") {
+    if (currencySelectTo.value == "real"){
         currencyNameTo.innerHTML = "Real Brasileiro"
         currencyImgTo.src = "./assets/img/real.png"
     }
