@@ -1,14 +1,15 @@
 //Sempre que eu quiser testar a conectividade do JS com meu HTML, uso o console.log() é uma boa prática pra ir testando se tudo está correndo bem no código
 
 const convertButton = document.querySelector(".convert-button");
-const currencySelectTo = document.querySelector(".currency-select-to");
-const currencySelectFrom = document.querySelector(".currency-select-from");
+const currencySelectFrom = document.querySelector(".currency-select-from"); //DE
+const currencySelectTo = document.querySelector(".currency-select-to"); //PARA
 
 //função para conversão dos valores de Real para Dólar
 function convertValues() {
 
     //teste para saber se está tudo certo com os códigos
     console.log(currencySelectFrom.value);
+    console.log(currencySelectTo.value);
 
     //pegando o valor que é digitado dentro do input. Buscanso o valor lá dentro do HTML, buscando apenas o valor dentro dele.
     const inputCurrencyValue = document.querySelector(".input-currency").value; //Defini que não quero o input inteiro, mas apenas o valor de dentro dele
@@ -25,7 +26,7 @@ function convertValues() {
     if (currencySelectTo.value == "dolar") {
         currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
-            currency: "USD",
+            currency: "USD"
         }).format(inputCurrencyValue / dolarToday);
     }
 
@@ -61,11 +62,18 @@ function convertValues() {
       já formatando para a moeda do Brasil*/
     currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
-        currency: "BRL",
+        currency: "BRL"
     }).format(currencyValueToConvert);
+
+
 }
 
 
+
+
+
+
+//Funções para alterar as respectivas bandeiras das moedas quando forem selecionadas
 function changeCurrencyFrom(){
     const currencyNameFrom = document.querySelector(".currency-name-from")
     const currencyImgFrom = document.querySelector(".currency-img-from")
@@ -97,6 +105,7 @@ function changeCurrencyFrom(){
     }
 }
 
+
 function changeCurrencyTo(){
     const currencyNameTo = document.getElementById("currency-name-to")
     const currencyImgTo = document.querySelector(".currency-img-to")
@@ -126,6 +135,7 @@ function changeCurrencyTo(){
         currencyNameTo.innerHTML = "Real Brasileiro"
         currencyImgTo.src = "./assets/img/real.png"
     }
+
     // Aqui chamamos novamente a função de converter, para que ao final das alterações de nome e imagem
     // dependendo da seleção que for feita, o usuário não precise clicar novamente no botão para converter
     // o valor, depois de inserir o valor a ser convertido e converter, o simples fato de trocar novamente

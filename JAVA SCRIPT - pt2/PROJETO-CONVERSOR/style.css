@@ -20,7 +20,7 @@ body {
     Para centralizar a imagem do logo, foi utilizado o macete das margens left e right como auto, 
     porém isso só funciona se definirmos o display da imagem como: block porque por padrão as imagens
     vem como display inline-block */
-    width: 300px;
+    width: 50px;
     display: block;
     margin-top: 20px;
     margin-bottom: 20px;
