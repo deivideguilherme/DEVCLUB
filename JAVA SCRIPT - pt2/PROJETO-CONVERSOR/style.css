@@ -20,7 +20,7 @@ body {
     Para centralizar a imagem do logo, foi utilizado o macete das margens left e right como auto, 
     porém isso só funciona se definirmos o display da imagem como: block porque por padrão as imagens
     vem como display inline-block */
-    width: 50px;
+    width: 130px;
     display: block;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -99,12 +99,12 @@ section {
     gap: 4px; /*Essa propriedade é a distância entre os itens*/
 }
 
-.currency {
+.currency-name-from, .currency-name-to {
     color: #777777;
     font-size: 14px;
 }
 
-.currency-value, .currency-value-to-convert {
+.currency-value-to, .currency-value-from {
     color: #555555;
     font-weight: 700;
     font-size: 20px;
