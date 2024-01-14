@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <img class="logo" src="./assets/logo.gif" alt="logo-convert-money">
+    <img class="logo" src="./assets/logo4.png" alt="logo-convert-money">
 
     <main>
         <label>
-            Converter <b>de</b>
+            Converter <b>de:</b>
             <select class="select-from">
                 <option value="from-real">R$ Real Brasileiro</option>
                 <option value="from-dolar">US$ Dólar Americano</option>
@@ -26,7 +26,7 @@
         </label>
 
         <label>
-            Converter <b>para</b>
+            Converter <b>para:</b>
             <select class="select-to">
                 <option value="to-dolar">US$ Dólar Americano</option>
                 <option value="to-euro">€ Euro </option>
@@ -37,13 +37,13 @@
         </label>
 
         <label>
-            Valor
+            Valor:
             <input class="input-currency" placeholder="R$ 0,00">
         </label>
 
         <button class="convert-button">Converter</button>
 
-        <section>
+        <section class="convertion-values">
             <!--CONVERTER DE-->
             <div class="currency-box">
                 <img class="currency-img-from" src="./assets/img/real.png" alt="logo-moeda-a-converter">
@@ -51,17 +51,26 @@
                 <p class="currency-value-to-convert">R$ 0,00</p>
             </div>
 
-            <img class="arrow-img" src="./assets/img/arrow.png" alt="seta">
+            <img class="arrow-img" src="./assets/img/arrow2.png" alt="seta">
 
             <!--CONVERTER PARA-->
             <div class="currency-box">
                 <img class="currency-img-to" src="./assets/img/dolar.png" alt="logo-moeda-convertida">
                 <p class="currency-name-to">Dólar Americano</p>
-                <p class="currency-value-converted">US$ 0.0</p>
+                <p class="currency-value-converted">$0.00</p>
             </div>
         </section>
 
     </main>
+    
+    <footer>
+        <p class="real-time-values">Cotação em: <label class="real-time-date"></label></p>
+        <p class="real-time-date"></p><br><br>
+        <label>| Dólar → </label><p class="dolar-today">   $0.00 </p><br> 
+        <label>| Euro → </label><p class="euro-today">    $0.00 </p><br>        
+        <label>| Libra → </label><p class="libra-today">   $0.00 </p><br>
+        <label>| Bitcoin → </label><p class="bitcoin-today"> $0.00 </p>
+    </footer>
 
 </body>
 
