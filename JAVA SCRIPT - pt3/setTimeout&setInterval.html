@@ -8,33 +8,51 @@
 </head>
 
 <body>
-    <button>Stop</button>
-    <button>Start</button>
+    <h1>0</h1>
+    <button onclick="stop()"> Stop </button>
+    <button onclick="start()"> Start </button>
 
 </body>
 
 <script>
-    /*
-        setTimeout  --> Executa uma vez
-        setInterval --> Executa infinita vezes
-    */
+    //     setTimeout  --> Executa uma vez
+    //     setInterval --> Executa infinita vezes
+                //clearInterval --> Pausa o setInterval
+    
+    // Exemplo setInterval
+    // let number = 0
 
-    setTimeout(() => {
-        //Executa o que estiver aqui
-        
-    }, timeout);
+    // setInterval(() => {         //Por padrão ele nunca para a contagem do tempo, a unica forma de parar a contagem é com o elemento clearInterval
+    //     console.log (number++)
+    // }, 1000);
 
     
-    setTimeout(function() => {
-        //Executa o que estiver aqui
+    // Exemplo setTimeout
+    // setTimeout executa depois do tempo estabelecido
+    // setTimeout(function() {
+    //     //Executa o que estiver aqui
+    //     alert('Executei!')
 
-    }, timeout);
+    // }, 3000);                         //||    1000 milisegundos = 1 segundo    ||
 
+    let number = 0
+    let cron
+    let h1 = document.querySelector('h1')
+    
+    function start(){
 
-    function myFunction(){
-        //Executa o que estiver aqui
+        cron = setInterval(function() {     //Aqui o setInterval foi adicionado dentro de uma variável pois para que possamos para-lo 
+            number++                        //com o clearInterval é necessário discriminar qual queremos parar, supondo que tivessemos vários outros 
+            h1.innerHTML = number           //no projeto. 
+        }, 1000) 
+
     }
-    setTimeout(myFunction, timeout);
+
+
+    function stop(){
+        clearInterval(cron)
+    }
+    
 </script>
 
 </html>
