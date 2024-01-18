@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Do While</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Digite o nome do contato">
+    <p></p>
+    <button onclick="search()">Procurar Contato</button>
+</body>
+
+<script>
+    let p = document.querySelector('p')
+    let input = document.querySelector('input')
+
+    const contacts = [
+        { name: 'Deivide', number: '(14)99660-9547' },
+        { name: 'Carla', number: '(14)99660-0866' },
+    ]
+
+    function search() {
+        let i = 0
+
+        while (i < contacts.length) {
+
+            if (input.value.toLowerCase() === contacts[i].name.toLowerCase()) {
+                p.innerHTML = `Contato encontrado, nome: ${contacts[i].name}. O tefone do contato é: ${contacts[i].number}`
+
+                break
+            } else {
+                p.innerHTML = 'Contato não encontrado! Tente novamente. '
+            }
+            i++;
+
+        }
+
+    }
+
+</script>
+
+</html>
