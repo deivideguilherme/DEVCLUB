@@ -73,17 +73,17 @@ section {
 }
 
 .container-left img {
-    width: 100%;
+    width: 90%;
     position: absolute;
-    bottom: 60px;
-    left: -50px;
+    bottom: -140px;
+    left: -150px;
     animation: moveAbobora 2s infinite alternate ease-in-out;
 }
 
 .container-left-info {
     position: absolute;
-    bottom: 0px;
-    left: 50px;
+    bottom: 220px;
+    left: 300px;
 
     padding-right: 20px;
     border-right: 1px solid #A7DE93;
@@ -120,7 +120,8 @@ section {
 
 .container-right {
     width: 420px;
-    margin-top: 30px;
+    margin-top: 80px;
+    margin-right: 100px;
     height: 420px;
     display: flex;
     flex-direction: column;
@@ -198,7 +199,7 @@ h2 {
     line-height: 22px;
 
     display: block;
-    margin: 12px auto;
+    margin: 125px auto;
     background-color: transparent;
     border: none;
     background-image: url(./assets/btn-secondary.svg);
@@ -211,16 +212,21 @@ h2 {
 }
 
 @keyframes moveAbobora {
-    from{
+    from {
         transform: translate(-5%, -5%) rotate(15deg);
     }
+
     to {
         transform: translate(0, 0) rotate(-15deg);
     }
 }
 
 /*Responsividade*/
-@media (max-width: 800px){
+@media (max-width: 800px) {
+    header {
+        margin-top: 25px;
+    }
+
     body {
         padding: 12px 24px;
         overflow-x: hidden;
@@ -239,6 +245,7 @@ h2 {
         left: auto;
         display: flex;
         justify-content: center;
+        height: 120px;
     }
 
     .container-left img {
@@ -247,7 +254,10 @@ h2 {
     }
 
     .container-left-info {
-        left: auto;
+        position: relative;
+        top: 115px;
+        left: -100px;
+        bottom: 50px;
     }
 
     .container-right {
@@ -255,19 +265,15 @@ h2 {
         left: auto;
         display: flex;
         justify-content: center;
-    }
-
-    .container-right img {
-        width: 80%;
-        left: 0;
+        height: 590px;
+        margin-right: 0;
     }
 
     .container-right-info {
         left: auto;
     }
 
-
-
-
-
+    .btn-ghost {
+        margin: auto;
+    }
 }
