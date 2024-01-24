@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s ease;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 12px 60px;
+    background: linear-gradient(136deg, rgba(91, 135, 75, 0.76) 12.91%, #0C3720 87.68%);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #F8F8FD;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    position: relative;
+}
+
+.underline:after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0px;
+    position: absolute;
+    background-color: #F8F8FD;
+    transition: 0.3s ease;
+}
+
+.underline:hover::after {
+    width: 100%;
+}
+
+.btn-link {
+    padding: 10px 20px;
+    border-radius: 41px;
+    border: 1px solid #F8F8FD;
+}
+
+.btn-link:hover {
+    opacity: 0.7;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-left {
+    width: 50%;
+    height: 450px;
+    position: relative;
+}
+
+.container-left img {
+    width: 100%;
+    position: absolute;
+    bottom: 60px;
+    left: -50px;
+    animation: moveAbobora 2s infinite alternate ease-in-out;
+}
+
+.container-left-info {
+    position: absolute;
+    bottom: 0px;
+    left: 50px;
+
+    padding-right: 20px;
+    border-right: 1px solid #A7DE93;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 85px;
+}
+
+.container-left-info::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #A7DE93;
+    position: absolute;
+    right: -6px;
+    top: -8px;
+}
+
+.container-left-info p:first-child {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 180%;
+}
+
+.container-left-info p:last-child {
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.container-right {
+    width: 420px;
+    margin-top: 30px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+h2 {
+    color: #F8F8FD;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.container-right-info p:first-child {
+    color: #FFFFFF;
+    font-size: 68px;
+    font-weight: 900;
+    line-height: 109%;
+}
+
+.container-right-info p:last-child {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 180%;
+    opacity: 0.8;
+}
+
+.container-actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-actions button {
+    color: #303056;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    background-image: url(./assets/btn-primary.svg);
+    background-color: transparent;
+    border: none;
+    padding: 29px 43px;
+    cursor: pointer;
+}
+
+.container-actions button:hover {
+    opacity: 0.8;
+    color: #FFFFFF;
+}
+
+.container-actions a {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    text-decoration: none;
+}
+
+.container-actions a:hover {
+    opacity: 0.8;
+}
+
+.btn-ghost {
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+
+    display: block;
+    margin: 12px auto;
+    background-color: transparent;
+    border: none;
+    background-image: url(./assets/btn-secondary.svg);
+    padding: 34px 43px;
+    cursor: pointer;
+}
+
+.btn-ghost:hover {
+    color: #303056
+}
+
+@keyframes moveAbobora {
+    from{
+        transform: translate(-5%, -5%) rotate(15deg);
+    }
+    to {
+        transform: translate(0, 0) rotate(-15deg);
+    }
+}
+
+/*Responsividade*/
+@media (max-width: 800px){
+    body {
+        padding: 12px 24px;
+        overflow-x: hidden;
+    }
+
+    nav {
+        display: none;
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    .container-left {
+        width: 100%;
+        left: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-left img {
+        width: 80%;
+        left: 0;
+    }
+
+    .container-left-info {
+        left: auto;
+    }
+
+    .container-right {
+        width: 100%;
+        left: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-right img {
+        width: 80%;
+        left: 0;
+    }
+
+    .container-right-info {
+        left: auto;
+    }
+
+
+
+
+
+}
