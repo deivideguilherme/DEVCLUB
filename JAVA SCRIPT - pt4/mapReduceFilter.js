@@ -44,3 +44,10 @@ const marketValueOldCompanies = companies
 .reduce(calcRemainingCompanies, 0)
 
 console.log(marketValueOldCompanies)
+
+//Exercício proposto
+/*
+MAP    -> Subtrair 10% de valor de mercado a todas as companhias
+FILTER -> Filtrar somente companhias fundadas depois de 1980
+REDUCE -> Somar o valor de mercado das companhias restantes
+*/
