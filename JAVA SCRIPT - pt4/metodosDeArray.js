@@ -27,8 +27,6 @@
                        por fim a informação que substituirá a informação do array original. 
     - pop          --> Remove o último elemento do array
     - shift        --> Remove o primeiro elemento do array
-
-
 */
 
 const array1 = [1, 2, 3];
