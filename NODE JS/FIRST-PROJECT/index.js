@@ -42,6 +42,7 @@ const checkUserId = (request, response, next) => {
     next()
 }
 
+// Lendo os usuários
 app.get('/users', (request, response) => {
     return response.json(users)
 })
@@ -64,7 +65,7 @@ app.put('/users/:id', checkUserId, (request, response) => {
 
     const updatedUser = { id, name, age }
 
-    users [index] = updatedUser
+    users[index] = updatedUser
     
     return response.json(updatedUser)
 })
