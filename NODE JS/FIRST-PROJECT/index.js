@@ -27,6 +27,8 @@ app.use(express.json())
 */
 const users = []
 
+
+//Middleware
 const checkUserId = (request, response, next) => {
     const { id } = request.params
 
@@ -60,7 +62,7 @@ app.post('/users', (request, response) => {
 
 app.put('/users/:id', checkUserId, (request, response) => {
     const { name, age } = request.body
-    const index = request.userIndex
+    const index = request.userIndex //posição do array onde está o usuário
     const id = request.userId
 
     const updatedUser = { id, name, age }
@@ -75,7 +77,7 @@ app.delete('/users/:id', checkUserId, (request, response) => {
 
     users.splice(index, 1)
 
-    return response.status(204).json()
+    return response.status(204).json() //retornando apenas um status de sucesso, sem conteúdo algum
 })
 
 
