@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 10px;
+    border: 1px solid #9758A6;
+    display: flex;
+    height: 800px;
+}
+
+/* 
+    Main Axis -> Eixo Principal 
+    Cross Axis -> Eixo Secundário
+
+    Se um item estiver alinhado em linha (row) a linha se torna o eixo principal e a coluna o eixo secundário. E no caso de um alinhamento em columa (column) a coluna se torna o eixo principal e alinha secundário.
+
+    O Justify-content faz o alinhamento baseado no eixo principal;
+    
+    O Align-item faz o alinhamento baseado no eixo secundário;
+*/
+
+.block {
+    width: 100px;
+    height: 100px;
+    background: #CDD728;
+    border: 5px solid #9758A6;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    flex-grow: 1;
+}
