@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+/*
+  useState -> Estado no react / Estado é o mesmo que uma variável
+  useRef   -> Faz o mapeamento de um item através de uma referência e assim consegue pegar suas informações
+*/
+
+import React, { useState, useRef } from "react";
 import People from "./assets/people.svg";
 import Arrow from "./assets/arrow.svg";
 import Trash from "./assets/trash.svg";
@@ -17,25 +22,26 @@ import {
 //JSX
 const App = () => {
   //Array de usuários
-  // const users = [];
-
-  //Estado no react / Estado é o mesmo que uma variável
+  
   //React Hooks => Ferramentas auxiliares
-  const [users, setUsers] = useState([])
-  const [name, setName] = useState()
-  const [age, setAge] = useState()
+  const [users, setUsers] = useState([]);
+  const inputName = useRef()
+  const inputAge = useRef()
 
   function addNewUser() {
-    //Utilizando o Spread Operators (...)
-    setUsers([...users, {id: Math.random(), name, age}])
+    //Utilizando o Spread Operators (...). Serve para "esparramar" os itens dentro do array
+    //Pegando as informações do input através das referências criadas com o useRef()
+    setUsers([... users, { 
+      id: Math.random(), 
+      name:inputName.current.value, 
+      age:inputAge.current.value 
+    }])
   }
 
-  function changeInputName(event) {
-    setName(event.target.value)
-  }
-
-  function changeInputAge(event) {
-    setAge(event.target.value)
+  function deleteUser (userId) {
+    //!== significa diferente
+    const newUsers = users.filter( user => user.id !== userId)
+    setUsers(newUsers);
   }
 
   //O return sempre irá retornar HTML
@@ -47,10 +53,10 @@ const App = () => {
         <H1>Olá</H1>
 
         <InputLabel>Nome</InputLabel>
-        <Input onChange={changeInputName} placeholder="Nome" />
+        <Input ref={inputName} placeholder="Nome" />
 
         <InputLabel>Idade</InputLabel>
-        <Input onChange={changeInputAge} placeholder="Idade" />
+        <Input ref={inputAge} placeholder="Idade" />
 
         <Button onClick={addNewUser}>
           Cadastrar <img alt="seta" src={Arrow} />
@@ -63,7 +69,11 @@ const App = () => {
           {users.map((user) => (
             <User key={user.id}>
               <p>{user.name}</p> <p>{user.age}</p>
-              <button><img src={Trash} alt="icone-lata-de-lixo" /></button>
+              {/* Por padrão o React não aceita que enviamos paramêtros juntos com a função, mas pra que isso seja possível
+              inicio o parâmtro com uma arrow function () =>, ai sim consigo enviar o parâmetro que quero, como no caso o (user.id) */}
+              <button onClick={ () => deleteUser(user.id) }>
+                <img src={Trash} alt="icone-lata-de-lixo" />
+              </button>
             </User>
           ))}
         </ul>
