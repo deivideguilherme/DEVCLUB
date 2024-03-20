@@ -1,17 +1,18 @@
 //Variável para importar/trazer a dependencia express para o projeto
-const express = require('express')
-
+import express from 'express';
 //Biblioteca de id's instalado no no projeto (--> npm i uuid)
-const uuid = require('uuid')
+import { v4 } from 'uuid';
+import cors from 'cors';
 
 // Variável para porta da aplicação, caso seja necessário mudar a porta
 // fica mais fácil alterar a váriável do que o código em si.  
-const port = 3001
+const port = 3001;
 
 //Variável para facilitar a chamada do express
-const app = express()
-//Avisando o express que utilizaremos o formato json para troca de informações
-app.use(express.json())
+const app = express();
+//Avisando o express que utilizaremos o formato json e o cors para todas nossas rotas trocarem informações
+app.use(express.json());
+app.use(cors());
 
 /*
     - Query Params -> meusite.com/users?nome=deivide&age=32   //FILTROS
@@ -52,7 +53,7 @@ app.get('/users', (request, response) => {
 app.post('/users', (request, response) => {
     const { name, age } = request.body
 
-    const user = { id:uuid.v4(), name, age }
+    const user = { id:v4(), name, age }
     
     // Adicionando o usuário criado dentro do array users[]
     users.push(user)
@@ -79,15 +80,6 @@ app.delete('/users/:id', checkUserId, (request, response) => {
 
     return response.status(204).json() //retornando apenas um status de sucesso, sem conteúdo algum
 })
-
-
-
-
-
-
-
-
-
 
 
 

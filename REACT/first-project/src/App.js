@@ -4,6 +4,8 @@
 */
 
 import React, { useState, useRef } from "react";
+
+import axios  from "axios";
 import People from "./assets/people.svg";
 import Arrow from "./assets/arrow.svg";
 import Trash from "./assets/trash.svg";
@@ -28,14 +30,24 @@ const App = () => {
   const inputName = useRef()
   const inputAge = useRef()
 
-  function addNewUser() {
+  async function addNewUser() {
+    const dataApi = await axios.post("http://localhost:3001/users", {
+      name:inputName.current.value, 
+      age:inputAge.current.value
+    });
+    
+    console.log(dataApi.data)
+
     //Utilizando o Spread Operators (...). Serve para "esparramar" os itens dentro do array
     //Pegando as informações do input através das referências criadas com o useRef()
+    
+    /* Essa forma foi feita antes da utlização do axios e da conexão com back-end.
     setUsers([... users, { 
       id: Math.random(), 
       name:inputName.current.value, 
       age:inputAge.current.value 
     }])
+    */
   }
 
   function deleteUser (userId) {
