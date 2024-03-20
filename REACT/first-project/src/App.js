@@ -30,24 +30,29 @@ const App = () => {
   const inputName = useRef()
   const inputAge = useRef()
 
+  //Criando novo usuário
   async function addNewUser() {
-    const dataApi = await axios.post("http://localhost:3001/users", {
+    /* data é onde contém a informação do usuário criado. Dois pontos
+    newUser, estamos apenas dando um nome para o data.
+    */
+    const { data: newUser} = await axios.post('http://localhost:3001/users', {
       name:inputName.current.value, 
       age:inputAge.current.value
     });
-    
-    console.log(dataApi.data)
 
-    //Utilizando o Spread Operators (...). Serve para "esparramar" os itens dentro do array
-    //Pegando as informações do input através das referências criadas com o useRef()
-    
-    /* Essa forma foi feita antes da utlização do axios e da conexão com back-end.
-    setUsers([... users, { 
-      id: Math.random(), 
-      name:inputName.current.value, 
-      age:inputAge.current.value 
-    }])
+    /*
+    Utilizando o Spread Operators (...). Serve para "esparramar" os itens dentro do array;
     */
+    setUsers([... users, newUser]);
+    /*
+    setUsers é onde está sendo esparramado todos os usuários e mais o novo usuário quando é cadastrado. 
+    */
+    
+    //Recuperando e exibindo na tela usuários já cadastrados no back-end
+    const { data: registeredUsers } = await axios.get('http://localhost:3001/users')
+
+    setUsers(registeredUsers)
+
   }
 
   function deleteUser (userId) {
