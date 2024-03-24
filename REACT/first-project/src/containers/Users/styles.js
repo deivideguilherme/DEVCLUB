@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Background from "./assets/background1.svg";
+import Background from "../../assets/background2.svg";
 
 export const Container = styled.div`
   background: url("${Background}");
@@ -26,12 +26,16 @@ export const ContainerItens = styled.div`
   );
 
   border-radius: 61px 61px 0 0;
+  backdrop-filter: blur(45px);
+
   padding: 50px 36px;
 
   display: flex;
   flex-direction: column;
 
   height: 100vh;
+
+  
 `;
 
 export const H1 = styled.h1`
@@ -43,47 +47,20 @@ export const H1 = styled.h1`
   color: #fff;
 `;
 
-export const InputLabel = styled.p`
-  letter-spacing: -0.408px;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 22px;
-  color: #eee;
-  margin-left: 25px;
-`;
-
-export const Input = styled.input`
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 14px;
-
-  width: 342px;
-  height: 58px;
-  padding-left: 25px;
-  margin-bottom: 34px;
-
-  border: none;
-  outline: none;
-
-  //Texto interno
-  color: #fff;
-  font-size: 20px;
-  line-height: 28px;
-`;
-
 export const Button = styled.button`
   width: 342px;
   height: 74px;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 14px;
+  margin-top: 120px;
 
-  border: none;
+  background: transparent;
+  border-radius: 14px;
+  border: 1px solid #FFF;
 
   //Texto interno
   font-weight: bold;
   font-size: 17px;
   line-height: 28px;
-  color: #fff;
+  color: #FFF;
   cursor: pointer;
 
   //Imagem da seta
@@ -97,6 +74,11 @@ export const Button = styled.button`
   }
   &:active {
     opacity: 0.5;
+  }
+
+  //Invertendo a direção da seta dentro do botão
+  img {
+    transform: rotateY(180deg);
   }
 `;
 

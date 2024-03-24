@@ -7,12 +7,11 @@
             Obs: Recebe 2 parâmetros, uma função anônima e um array
 */
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 
 import axios from "axios";
-import People from "./assets/people.svg";
-import Arrow from "./assets/arrow.svg";
-import Trash from "./assets/trash.svg";
+import People from "../../assets/people.svg";
+import Arrow from "../../assets/arrow.svg";
 
 import {
   Container,
@@ -22,7 +21,6 @@ import {
   InputLabel,
   Input,
   Button,
-  User
 } from "./styles";
 
 //JSX
@@ -53,25 +51,6 @@ const App = () => {
     */
   }
 
-  //Recuperando e exibindo na tela usuários já cadastrados no back-end
-  useEffect(() => {
-    async function fetchUsers() {
-      const { data: registeredUsers } = await axios.get('http://localhost:3001/users');
-
-      setUsers(registeredUsers);
-    }
-
-    fetchUsers()
-  }, [])
-
-  //Deletando usuário tanto no front-end quanto no back-end
-  async function deleteUser(userId) {
-    await axios.delete(`http://localhost:3001/users/${userId}`)
-    //!== significa diferente
-    const newUsers = users.filter(user => user.id !== userId)
-    setUsers(newUsers);
-  }
-
   //O return sempre irá retornar HTML
   return (
     //Sempre que utilizo chaves o JSX sabe que vou utilizar elementos Java Script
@@ -90,21 +69,6 @@ const App = () => {
           Cadastrar <img alt="seta" src={Arrow} />
         </Button>
 
-        <ul>
-          {/* Mapeando item por item dentro do array 'users'.
-          Toda vez que eu for iterar itens dentro do React, tenho que definir uma chave unica para o elemento,
-          como foi feito para o <li> = User. */}
-          {users.map((user) => (
-            <User key={user.id}>
-              <p>{user.name}</p> <p>{user.age}</p>
-              {/* Por padrão o React não aceita que enviamos paramêtros juntos com a função, mas pra que isso seja possível
-              inicio o parâmtro com uma arrow function () =>, ai sim consigo enviar o parâmetro que quero, como no caso o (user.id) */}
-              <button onClick={() => deleteUser(user.id)}>
-                <img src={Trash} alt="icone-lata-de-lixo" />
-              </button>
-            </User>
-          ))}
-        </ul>
       </ContainerItens>
     </Container>
   );
