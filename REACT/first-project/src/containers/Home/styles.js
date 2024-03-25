@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import Background from "../../assets/background1.svg";
 
@@ -71,7 +72,7 @@ export const Input = styled.input`
   line-height: 28px;
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   width: 342px;
   height: 74px;
   margin-top: 120px;
