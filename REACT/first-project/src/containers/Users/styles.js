@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import Background from "../../assets/background2.svg";
 
@@ -11,76 +10,12 @@ export const Container = styled.div`
   align-items: center;
   gap: 40px;
 
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh; 
 `;
 
 export const Image = styled.img`
   margin-top: 30px;
-`;
-
-export const ContainerItens = styled.div`
-  background: linear-gradient(
-    157.44deg,
-    rgba(255, 255, 255, 0.6) 0.84%,
-    rgba(255, 255, 255, 0.6) 0.85%,
-    rgba(255, 255, 255, 0.15) 100%
-  );
-
-  border-radius: 61px 61px 0 0;
-  backdrop-filter: blur(45px);
-
-  padding: 50px 36px;
-
-  display: flex;
-  flex-direction: column;
-
-  height: 100vh;
-
-  
-`;
-
-export const H1 = styled.h1`
-  margin-bottom: 80px;
-  font-size: 34px;
-  font-weight: bold;
-  line-height: 40px;
-  text-align: center;
-  color: #fff;
-`;
-
-export const Button = styled(Link)`
-  width: 342px;
-  height: 74px;
-  margin-top: 120px;
-
-  background: transparent;
-  border-radius: 14px;
-  border: 1px solid #FFF;
-
-  //Texto interno
-  font-weight: bold;
-  font-size: 17px;
-  line-height: 28px;
-  color: #FFF;
-  cursor: pointer;
-
-  //Imagem da seta
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-
-  &:hover {
-    opacity: 0.8;
-  }
-  &:active {
-    opacity: 0.5;
-  }
-
-  //Invertendo a direção da seta dentro do botão
-  img {
-    transform: rotateY(180deg);
-  }
 `;
 
 export const User = styled.li`

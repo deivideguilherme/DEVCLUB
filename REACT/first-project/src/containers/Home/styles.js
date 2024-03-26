@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import Background from "../../assets/background1.svg";
 
@@ -16,32 +15,6 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   margin-top: 30px;
-`;
-
-export const ContainerItens = styled.div`
-  background: linear-gradient(
-    157.44deg,
-    rgba(255, 255, 255, 0.6) 0.84%,
-    rgba(255, 255, 255, 0.6) 0.85%,
-    rgba(255, 255, 255, 0.15) 100%
-  );
-
-  border-radius: 61px 61px 0 0;
-  padding: 50px 36px;
-
-  display: flex;
-  flex-direction: column;
-
-  height: 100vh;
-`;
-
-export const H1 = styled.h1`
-  margin-bottom: 80px;
-  font-size: 34px;
-  font-weight: bold;
-  line-height: 40px;
-  text-align: center;
-  color: #fff;
 `;
 
 export const InputLabel = styled.p`
@@ -70,34 +43,4 @@ export const Input = styled.input`
   color: #fff;
   font-size: 20px;
   line-height: 28px;
-`;
-
-export const Button = styled(Link)`
-  width: 342px;
-  height: 74px;
-  margin-top: 120px;
-
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 14px;
-  border: none;
-
-  //Texto interno
-  font-weight: bold;
-  font-size: 17px;
-  line-height: 28px;
-  color: #fff;
-  cursor: pointer;
-
-  //Imagem da seta
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-
-  &:hover {
-    opacity: 0.8;
-  }
-  &:active {
-    opacity: 0.5;
-  }
 `;

@@ -6,20 +6,22 @@
             2° - quando um estado react no array de dependência é alterado
             Obs: Recebe 2 parâmetros, uma função anônima e um array
 */
-
 import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import People from "../../assets/people.svg";
 import Arrow from "../../assets/arrow.svg";
 
+import { H1 } from "../../components/Title/styles";
+import { ContainerItens } from "../../components/ContainerItens/styles";
+import { Button } from "../../components/Button/styles";
+
 import {
   Container,
-  H1,
   Image,
-  ContainerItens,
   InputLabel,
   Input,
-  Button,
 } from "./styles";
 
 //JSX
@@ -28,6 +30,8 @@ const App = () => {
 
   //React Hooks => Ferramentas auxiliares
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate()
+
   const inputName = useRef()
   const inputAge = useRef()
 
@@ -48,6 +52,8 @@ const App = () => {
     /*
     setUsers é onde está sendo esparramado todos os usuários e mais o novo usuário quando é cadastrado. 
     */
+
+    navigate('/usuarios')
   }
 
   //O return sempre irá retornar HTML
@@ -64,7 +70,7 @@ const App = () => {
         <InputLabel>Idade</InputLabel>
         <Input ref={inputAge} placeholder="Idade" />
 
-        <Button to='/usuarios' onClick={addNewUser}>
+        <Button onClick={addNewUser}>
           Cadastrar <img alt="seta" src={Arrow} />
         </Button>
 

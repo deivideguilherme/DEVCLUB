@@ -6,29 +6,31 @@
             2° - quando um estado react no array de dependência é alterado
             Obs: Recebe 2 parâmetros, uma função anônima e um array
 */
-
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom'; 
 
 import axios from "axios";
 import Avatar from "../../assets/avatar.svg";
 import Arrow from "../../assets/arrow.svg";
 import Trash from "../../assets/trash.svg";
 
+import { H1 } from "../../components/Title/styles";
+import { ContainerItens } from "../../components/ContainerItens/styles";
+import { Button } from "../../components/Button/styles";
+
 import {
   Container,
-  H1,
   Image,
-  ContainerItens,
-  Button,
   User
 } from "./styles";
 
 //JSX
-const Users = () => {
+function Users() {
   //Array de usuários
 
   //React Hooks => Ferramentas auxiliares
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate()
 
   //Recuperando e exibindo na tela usuários já cadastrados no back-end
   useEffect(() => {
@@ -49,12 +51,17 @@ const Users = () => {
     setUsers(newUsers);
   }
 
+  //Retornando para página anterior
+  function goBackPage() {
+    navigate('/')
+  }
+
   //O return sempre irá retornar HTML
   return (
     //Sempre que utilizo chaves o JSX sabe que vou utilizar elementos Java Script
     <Container>
       <Image alt="logo-imagem" src={Avatar} />
-      <ContainerItens>
+      <ContainerItens isBlur={true}>
         <H1>Usuários</H1>
 
         <ul>
@@ -73,7 +80,7 @@ const Users = () => {
           ))}
         </ul>
 
-        <Button to='/'>
+        <Button isBack={true} onClick={ goBackPage }>
           <img alt="seta" src={Arrow} /> Voltar 
         </Button>
 
