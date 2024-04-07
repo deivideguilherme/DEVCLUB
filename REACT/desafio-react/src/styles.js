@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: #000;
-  height: 100vh;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -41,9 +41,11 @@ export const InputLabel = styled.p`
 export const Input = styled.input`
   width: 342px;
   height: 58px;
+  margin-bottom: 40px;
+
   border-radius: 15px;
   border: none;
-  margin-bottom: 40px;
+  outline: none;
 
   background: rgba(255, 255, 255, 0.25);
   color: #fff;
@@ -76,10 +78,42 @@ export const Button = styled.button`
   justify-content: center;
   gap: 10px;
 
-  &:hover{
+  &:hover {
     opacity: 0.8;
   }
-  &:active{
+  &:active {
     opacity: 0.6;
+  }
+`;
+
+export const Pedido = styled.li`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 342px;
+  height: 58px;
+  margin-top: 15px;
+
+  border-radius: 15px;
+  border: none;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+
+  padding-left: 15px;
+
+  p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 2px;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 `;

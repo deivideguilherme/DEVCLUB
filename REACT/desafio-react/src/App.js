@@ -1,36 +1,54 @@
-import React from 'react';
+import React from "react";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBurger } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBurger } from "@fortawesome/free-solid-svg-icons";
 
-import LogoPrincipal from './assets/logo-principal.svg';
+import LogoPrincipal from "./assets/logo-principal.svg";
+import Lixeira from "./assets/lixeira.svg";
 
 import {
-    Container,
-    Image,
-    ContainerItens,
-    H1,
-    InputLabel,
-    Input,
-    Button,
-} from './styles';
+  Container,
+  Image,
+  ContainerItens,
+  H1,
+  InputLabel,
+  Input,
+  Button,
+  Pedido,
+} from "./styles";
 
 function App() {
-    return (
-        <Container>
-            <Image src={LogoPrincipal} alt='logo-principal' />
-            <ContainerItens>
-                <H1>Faça seu pedido!</H1>
-                <InputLabel>Pedido</InputLabel>
-                <Input placeholder='Seu pedido' />
+  const pedidos = [
+    { id: Math.random(), nome: "x-bacon", preco: 25 },
+    { id: Math.random(), nome: "x-egg", preco: 22 },
+  ];
 
-                <InputLabel>Nome do Cliente</InputLabel>
-                <Input placeholder='Seu nome' />
+  return (
+    <Container>
+      <Image src={LogoPrincipal} alt="logo-principal" />
+      <ContainerItens>
+        <H1>Faça seu pedido!</H1>
+        <InputLabel>Pedido</InputLabel>
+        <Input placeholder="Seu pedido" />
 
-                <Button>Novo Pedido <FontAwesomeIcon icon={faBurger} /></Button>
-            </ContainerItens>
-        </Container>
-    )
+        <InputLabel>Nome do Cliente</InputLabel>
+        <Input placeholder="Seu nome" />
+
+        <Button>
+          Novo Pedido <FontAwesomeIcon icon={faBurger} />
+        </Button>
+
+        <ul>
+          {pedidos.map((pedido) => (
+            <Pedido key={pedido.id}>
+              <p>{pedido.nome}</p> <p>R$ {pedido.preco}</p>
+              <button><img src={Lixeira} alt="icone-lixeira" /></button>
+            </Pedido>
+          ))}
+        </ul>
+      </ContainerItens>
+    </Container>
+  );
 }
 
 export default App;
