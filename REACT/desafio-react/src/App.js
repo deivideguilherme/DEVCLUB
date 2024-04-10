@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 
+//Icone hamburger do botão novo pedido
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBurger } from "@fortawesome/free-solid-svg-icons";
 
@@ -18,10 +19,28 @@ import {
 } from "./styles";
 
 function App() {
-  const pedidos = [
-    { id: Math.random(), nome: "x-bacon", preco: 25 },
-    { id: Math.random(), nome: "x-egg", preco: 22 },
-  ];
+  //React Hook
+  const [pedidos, setPedidos] = useState([]);
+  const inputPedido = useRef();
+  const inputNome = useRef();
+
+  function novoPedido() {
+    //spread operator ...
+    setPedidos([
+      ...pedidos,
+      {
+        id: Math.random(),
+        pedido: inputPedido.current.value,
+        nome: inputNome.current.value,
+      },
+    ]);
+  }
+
+  function deletarPedido(idPedido){
+    const novosPedidos = pedidos.filter( pedido => pedido.id !== idPedido )
+    
+    setPedidos(novosPedidos)
+  }
 
   return (
     <Container>
@@ -29,20 +48,22 @@ function App() {
       <ContainerItens>
         <H1>Faça seu pedido!</H1>
         <InputLabel>Pedido</InputLabel>
-        <Input placeholder="Seu pedido" />
+        <Input ref={inputPedido} placeholder="Seu pedido" />
 
         <InputLabel>Nome do Cliente</InputLabel>
-        <Input placeholder="Seu nome" />
+        <Input ref={inputNome} placeholder="Seu nome" />
 
-        <Button>
+        <Button onClick={novoPedido}>
           Novo Pedido <FontAwesomeIcon icon={faBurger} />
         </Button>
 
         <ul>
           {pedidos.map((pedido) => (
             <Pedido key={pedido.id}>
-              <p>{pedido.nome}</p> <p>R$ {pedido.preco}</p>
-              <button><img src={Lixeira} alt="icone-lixeira" /></button>
+              <p>{pedido.pedido}</p> <p>{pedido.nome}</p>
+              <button onClick={() => deletarPedido(pedido.id)}>
+                <img src={Lixeira} alt="icone-lixeira" />
+              </button>
             </Pedido>
           ))}
         </ul>
