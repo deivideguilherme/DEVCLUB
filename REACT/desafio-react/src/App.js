@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import axios from 'axios';
 
 //Icone hamburger do botão novo pedido
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,22 +25,29 @@ function App() {
   const inputPedido = useRef();
   const inputNome = useRef();
 
-  function novoPedido() {
-    //spread operator ...
-    setPedidos([
-      ...pedidos,
-      {
-        id: Math.random(),
-        pedido: inputPedido.current.value,
-        nome: inputNome.current.value,
-      },
-    ]);
+  async function novoPedido() {
+    const dataAPI = await axios.post("http://localhost:5000/pedidos", {
+      pedido: inputPedido.current.value,
+      nomeCliente: inputNome.current.value,
+    });
+
+    console.log(dataAPI)
+
+    // //spread operator ...
+    // setPedidos([
+    //   ...pedidos,
+    //   {
+    //     id: Math.random(),
+    //     pedido: inputPedido.current.value,
+    //     nome: inputNome.current.value,
+    //   },
+    // ]);
   }
 
-  function deletarPedido(idPedido){
-    const novosPedidos = pedidos.filter( pedido => pedido.id !== idPedido )
-    
-    setPedidos(novosPedidos)
+  function deletarPedido(idPedido) {
+    const novosPedidos = pedidos.filter((pedido) => pedido.id !== idPedido);
+
+    setPedidos(novosPedidos);
   }
 
   return (
