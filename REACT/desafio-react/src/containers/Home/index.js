@@ -1,12 +1,11 @@
 import React, { useState, useRef } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 //Icone hamburger do botão novo pedido
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBurger } from "@fortawesome/free-solid-svg-icons";
 
-import LogoPrincipal from "./assets/logo-principal.svg";
-import Lixeira from "./assets/lixeira.svg";
+import LogoPrincipal from "../../assets/logo-principal.svg";
 
 import {
   Container,
@@ -16,38 +15,26 @@ import {
   InputLabel,
   Input,
   Button,
-  Pedido,
 } from "./styles";
 
 function App() {
-  //React Hook
+  //React Hook (useState, useRef, useEffect)
   const [pedidos, setPedidos] = useState([]);
   const inputPedido = useRef();
   const inputNome = useRef();
 
+  //Adicionando novos pedidos
   async function novoPedido() {
     const dataAPI = await axios.post("http://localhost:5000/pedidos", {
       pedido: inputPedido.current.value,
       nomeCliente: inputNome.current.value,
     });
 
-    console.log(dataAPI)
+    console.log(dataAPI.data)
 
-    // //spread operator ...
-    // setPedidos([
-    //   ...pedidos,
-    //   {
-    //     id: Math.random(),
-    //     pedido: inputPedido.current.value,
-    //     nome: inputNome.current.value,
-    //   },
-    // ]);
-  }
+    //spread operator ...
+    setPedidos([...pedidos, dataAPI.data]);
 
-  function deletarPedido(idPedido) {
-    const novosPedidos = pedidos.filter((pedido) => pedido.id !== idPedido);
-
-    setPedidos(novosPedidos);
   }
 
   return (
@@ -65,16 +52,6 @@ function App() {
           Novo Pedido <FontAwesomeIcon icon={faBurger} />
         </Button>
 
-        <ul>
-          {pedidos.map((pedido) => (
-            <Pedido key={pedido.id}>
-              <p>{pedido.pedido}</p> <p>{pedido.nome}</p>
-              <button onClick={() => deletarPedido(pedido.id)}>
-                <img src={Lixeira} alt="icone-lixeira" />
-              </button>
-            </Pedido>
-          ))}
-        </ul>
       </ContainerItens>
     </Container>
   );
