@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: #000;
-  height: 100%;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -30,42 +30,14 @@ export const H1 = styled.div`
   margin-bottom: 75px;
 `;
 
-export const InputLabel = styled.p`
-  color: #eee;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-  margin-left: 15px;
-`;
-
-export const Input = styled.input`
-  width: 342px;
-  height: 58px;
-  margin-bottom: 40px;
-
-  border-radius: 15px;
-  border: none;
-  outline: none;
-
-  background: rgba(255, 255, 255, 0.25);
-  color: #fff;
-
-  padding-left: 15px;
-
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 22px;
-  letter-spacing: 2px;
-`;
-
 export const Button = styled.button`
   width: 342px;
   height: 68px;
-  margin: 15px 0 30px 0;
+  margin-top: 180px;
 
   border: none;
 
-  background: #d93856;
+  background: #2D2D32;
   color: #fff;
   font-weight: 900;
   font-size: 17px;
