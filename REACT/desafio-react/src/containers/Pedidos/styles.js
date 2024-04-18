@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: #000;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -19,43 +20,6 @@ export const Image = styled.img`
 export const ContainerItens = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const H1 = styled.div`
-  text-align: center;
-  color: #fff;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 32px;
-  margin-bottom: 75px;
-`;
-
-export const Button = styled.button`
-  width: 342px;
-  height: 68px;
-  margin-top: 180px;
-
-  border: none;
-
-  background: #2D2D32;
-  color: #fff;
-  font-weight: 900;
-  font-size: 17px;
-  line-height: 2.5px;
-
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  &:hover {
-    opacity: 0.8;
-  }
-  &:active {
-    opacity: 0.6;
-  }
 `;
 
 export const Pedido = styled.li`

@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 import LogoPedidos from "../../assets/logo-pedidos.svg";
 import Lixeira from "../../assets/lixeira.svg"
+import { H1 } from "../../components/Title/styles";
+import { Button } from "../../components/Button/styles";
 
 import {
   Container,
   Image,
   ContainerItens,
-  H1,
-  Button,
   Pedido,
 } from "./styles";
 
 function Pedidos() {
   //React Hook (useState, useRef, useEffect)
   const [pedidos, setPedidos] = useState([]);
+  const navigate = useNavigate();
 
   //Exibindo pedidos já feitos
   useEffect(() => {
@@ -38,6 +40,10 @@ function Pedidos() {
     setPedidos(novosPedidos);
   }
 
+  function voltarPaginaHome(){
+    navigate('/');
+  }
+
   return (
     <Container>
       <Image src={LogoPedidos} alt="logo-pedidos" />
@@ -55,7 +61,7 @@ function Pedidos() {
           ))}
         </ul>
 
-        <Button>
+        <Button isback={true} onClick={voltarPaginaHome}> 
           Voltar
         </Button>
 
