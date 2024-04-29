@@ -29,6 +29,7 @@ class ProductController {
     return response.status(201).json(product);
   }
 
+  //Listando os produtos
   async index(request, response) {
     const products = await Product.findAll();
 
