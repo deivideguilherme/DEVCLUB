@@ -21,6 +21,9 @@ class CategoryController {
       return response.status(401).json();
     }
 
+    //Pegando o filename da imagem que será utilizada para as categorias
+    const { filename: path } = request.file;
+
     const { name } = request.body;
 
     //Verificando junto ao banco se o nome da categoria já existe ou não, antes de criar uma nova categoria
@@ -37,6 +40,7 @@ class CategoryController {
     //Criando a categoria
     const { id } = await Category.create({
       name,
+      path,
     });
 
     return response.status(201).json({ id, name });

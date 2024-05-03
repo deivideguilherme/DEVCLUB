@@ -21,21 +21,18 @@ routes.post('/session', SessionController.store);
 //Rota de autenticação, faz com que todas as rotas abaixo desse trecho de código, necessitarão passar por esse middleware que é resposável pela autenticação da aplicação.
 routes.use(authMiddleware);
 
-//Rota de criação de produtos
+//Rota de criação, listagem e atualização de produtos
 routes.post('/products', upload.single('file'), ProductController.store);
-//Rota de listagem de produtos
 routes.get('/products', ProductController.index);
+routes.put('/products/:id', upload.single('file'), ProductController.update);
 
-//Rota de criação de categorias
-routes.post('/categories', CategoryController.store);
-//Rota de listagem de categorias
+//Rota de criação e listagem de categorias
+routes.post('/categories', upload.single('file'), CategoryController.store);
 routes.get('/categories', CategoryController.index);
 
-//Rota de criação de pedidos
+//Rota de criação, listagem e atualização de pedidos
 routes.post('/orders', OrderController.store);
-//Rota de listagem dos pedidos
 routes.get('/orders', OrderController.index);
-//Atualizando / alterando status pedidos
 routes.put('/orders/:id', OrderController.update);
 
 export default routes;
