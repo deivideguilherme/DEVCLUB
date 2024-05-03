@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import authConfig from '../config/auth';
+import authConfig from '../../config/auth';
 
 function authMiddleware(request, response, next) {
   //Verificando se o token é válido na requisição
@@ -17,7 +17,7 @@ function authMiddleware(request, response, next) {
       }
 
       request.userId = decoded.id;
-
+      request.userName = decoded.name;
     });
   } catch (err) {
     return response.status(401).json({ error: 'Token inválido!' });
@@ -25,6 +25,5 @@ function authMiddleware(request, response, next) {
 
   return next();
 }
-
 
 export default authMiddleware;
