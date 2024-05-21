@@ -1,66 +1,11 @@
 {
-    "[javascriptreact]": {
-      "editor.codeActionsOnSave": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "source.organizeImports": false
-      }
-    },
-    "editor.formatOnSave": true,
-    "cSpell.enableFiletypes": ["javascript"],
-    "cSpell.language": "en,pt,pt_BR"
-  }
-
-  {
-    "cSpell.words": [
-        "cadastro",
-        "caminho",
-        "caracteres",
-        "Carrinho",
-        "categoria",
-        "CATEGORIAS",
-        "Cliente",
-        "compras",
-        "conta",
-        "deve",
-        "Digite",
-        "entregue",
-        "Falha",
-        "formated",
-        "hookform",
-        "isactive",
-        "Itens",
-        "loginimg",
-        "menos",
-        "novamente",
-        "obrigatória",
-        "obrigatório",
-        "pedido",
-        "Pedido",
-        "pedidos",
-        "pelo",
-        "possui",
-        "preparação",
-        "produtos",
-        "realizado",
-        "Sair",
-        "Seja",
-        "senha",
-        "Senha",
-        "tente",
-        "toastify",
-        "Todas",
-        "userlogo",
-        "usuário",
-        "válido",
-        "Verifique",
-        "Vindo"
-    ],
-    "cSpell.customDictionaries": {
-        "custom-dictionary-workspace": {
-            "name": "custom-dictionary-workspace",
-            "path": "${workspaceFolder:code-burger-interface}/.cspell/custom-dictionary-workspace.txt",
-            "addWords": true,
-            "scope": "workspace"
-        }
+  "[javascriptreact]": {
+    "editor.codeActionsOnSave": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "source.organizeImports": "never"
     }
+  },
+  "editor.formatOnSave": true,
+  "cSpell.enableFiletypes": ["javascript"],
+  "cSpell.language": "en,pt,pt_BR"
 }
