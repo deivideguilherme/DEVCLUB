@@ -36,7 +36,7 @@ class UserController {
     });
 
     if (userExists) {
-      return response.status(400).json({ error: 'Este e-mail já está cadastrado!' })
+      return response.status(409).json({ error: 'Este e-mail já está cadastrado!' })
     }
 
     const user = await User.create({
