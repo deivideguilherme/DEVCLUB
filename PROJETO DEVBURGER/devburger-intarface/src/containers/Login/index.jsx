@@ -3,25 +3,35 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { api } from "../../services/api";
-import  {toast} from "react-toastify";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
-import { Container, Form, InputContainer, LeftContainer, RightContainer, Title } from './styles';
-import { Button } from '../../components/Button';
-import Logo from '../../assets/logo.svg';
+import { Button } from "../../components/Button";
+import Logo from "../../assets/logo.svg";
+import {
+  Container,
+  Form,
+  InputContainer,
+  LeftContainer,
+  RightContainer,
+  Title,
+  Link,
+} from "./styles";
 
 export function Login() {
-
   //Validações do formulário
+  const navigate = useNavigate();
+
   const schema = yup
     .object({
       email: yup
         .string()
-        .email('Digite um e-mail válido')
-        .required('O e-mail é obrigatório'),
+        .email("Digite um e-mail válido")
+        .required("O e-mail é obrigatório"),
       password: yup
         .string()
-        .min(6, 'A senha deve ter ao menos 6 caracteres')
-        .required('Digite uma senha'),
+        .min(6, "A senha deve ter ao menos 6 caracteres")
+        .required("Digite uma senha"),
     })
     .required();
 
@@ -31,29 +41,37 @@ export function Login() {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
-  })
-  
+  });
+
   const onSubmit = async (data) => {
     const response = await toast.promise(
-      api.post('/session', {
+      api.post("/session", {
         email: data.email,
         password: data.password,
       }),
       //Configurações do toast
       {
-        pending: 'Verificando seus dados 🧐',
-        success: 'Seja bem vindo (a)👌',
-        error: 'E-mail ou senha incorretos 🤯',
+        pending: "Verificando seus dados 🧐",
+        success: {
+          render() {
+            setTimeout(() => {
+              navigate("/")
+            }, 2000);
+
+            return "Seja bem vindo (a)👌";
+          },
+        },
+        error: "E-mail ou senha incorretos 🤯",
       }
     );
 
     console.log(response);
-  }
+  };
 
   return (
     <Container>
       <LeftContainer>
-        <img src={Logo} alt='logo-devburger' />
+        <img src={Logo} alt="logo-devburger" />
       </LeftContainer>
       <RightContainer>
         <Title>
@@ -64,14 +82,14 @@ export function Login() {
         <Form onSubmit={handleSubmit(onSubmit)}>
           <InputContainer>
             <label>E-mail</label>
-            <input type="email" {...register('email')} />
+            <input type="email" {...register("email")} />
             {/* Elvis Operator '?' */}
             <p>{errors?.email?.message}</p>
           </InputContainer>
 
           <InputContainer>
             <label>Senha</label>
-            <input type="password" {...register('password')} />
+            <input type="password" {...register("password")} />
             {/* Elvis Operator '?' */}
             <p>{errors?.password?.message}</p>
           </InputContainer>
@@ -79,7 +97,7 @@ export function Login() {
           <Button type="submit">Entrar</Button>
         </Form>
         <p>
-          Não possui conta? <a>Clique aqui.</a>
+          Não possui conta? <Link to="/cadastro">Clique aqui.</Link>
         </p>
       </RightContainer>
     </Container>
